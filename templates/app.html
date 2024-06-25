@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Review Sentiment</title>
+    <style>
+        body{
+            background-color: #191D88;
+        }
+        h1{
+            color: #FFC436;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        textarea{
+            width: 80%;
+            height: 200px;
+            background-color: #1450A3;
+            font-size: 23px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #FFC436;
+            font-weight: 800;
+            padding: 20px;
+        }
+        textarea:focus{
+            border: 0px;
+            background-color: #337CCF;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button{
+            background-color: #FFC436;
+            color: #191D88;
+            font-weight: 900;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+            font-size: 30px;
+            border-radius: 35px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h2{
+            color: #FFC436;
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Movie Review Sentiment Analyser</h1>
+    <form method="POST" action="/predict">
+        <textarea id="rev" name="rev"></textarea>
+        <button>Submit</button>
+    </form>
+    <div>
+        {% if msg: %}
+            <h2>{{msg}}</h2>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
